@@ -52,9 +52,7 @@ public class Board {
 		board[table[Integer.parseInt(move)-1].x][table[Integer.parseInt(move)-1].y] = type;
 	}
 	public boolean gameover(){
-		for (int i = 0; i<3; i++)
-			for (int k = 0; k<3; k++)
-				if ( !board[i][k].equals("X") && !board[i][k].equals("O") )
+		if ( !contains("X") && !contains("O") )
 					return false;
 		return true;
 	} 
