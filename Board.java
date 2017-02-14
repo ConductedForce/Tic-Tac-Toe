@@ -52,22 +52,11 @@ public class Board {
 		board[table[Integer.parseInt(move)-1].x][table[Integer.parseInt(move)-1].y] = type;
 	}
 	public boolean gameover(){
-		int X = 0;
-		int O = 0;
-		int num = 0;
 		for (int i = 0; i<3; i++)
 			for (int k = 0; k<3; k++)
-				if ( board[i][k] == "X")
-					X++;
-				else if(board[i][k] == "O")
-					O++;
-				else
-					num++;
-		int total = num + X + O;
-		if (num == 0 && total == 9)
-			return true;
-		else
-			return false;
+				if ( !board[i][k].equals("X") && !board[i][k].equals("O") )
+					return false;
+		return true;
 	} 
 	public void output(){
 		System.out.println("\n -----------\n| "
